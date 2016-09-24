@@ -5,38 +5,43 @@ char* yylval = NULL ;
 %}
 %%
 
-"if"                                 { return; }   
-"break"                              { return; }   
-"cache"                              { return; } 
-"catch"                              { return; }   
-"continue"                           { return; }
-"do"                                 { return; }   
-"default"                            { return; }   
-"else"                               { return; }
-"elif"                               { return; }   
-"extend"                             { return; }   
-"echo"                               { return; } 
-"function"                           { return; }   
-"for"                                { return; } 
-"finally"                            { return; }   
-"implement"                          { return; }
-"in"                                 { return; }     
-"info"                               { return; }   
-"into"                               { return; }   
-"inline"                             { return; }   
-"public"                             { return; }
-"protect"                            { return; }   
-"private"                            { return; }
-"const"                              { return; }   
-"return"                             { return; }   
-"static"                             { return; }   
-"struct"                             { return; }   
-"switch"                             { return; }  
-"goto"                               { return; }   
-"try"                                { return; } 
-"typedef"                            { return; }   
-"while"                              { return; }   
+"if"                                 { return IF  ; }   
+"break"                              { return BREAK  ; }   
+"cache"                              { return CACHE ; } 
+"catch"                              { return CATCH  ; }   
+"continue"                           { return CONTINUE  ; }
+"do"                                 { return DO ; }  
+ 
+"default"                            { return DEFAULT  ; }   
+"else"                               { return ELSE ; }
+"elif"                               { return ELIF ; }   
+"extend"                             { return EXTEND ; }   
+"echo"                               { return ECHO ; } 
 
+"function"                           { return FUNCTION ; }   
+"for"                                { return FOR ; } 
+"finally"                            { return FINALLY ; }   
+"implement"                          { return IMPLEMENT ; }
+"in"                                 { return IN ; } 
+    
+"info"                               { return INFO ; }   
+"into"                               { return INTO ; }   
+"inline"                             { return INLINE ; }   
+"public"                             { return PUBLIC ; }
+"protect"                            { return PROTECT ; }   
+
+"private"                            { return PRIVATE ; }
+"const"                              { return CONST ; } 
+"return"                             { return RETURN  ; }   
+"static"                             { return STATIC ; }   
+"struct"                             { return STRUCT ; }   
+
+"switch"                             { return SWITCH  ; }  
+"goto"                               { return GOTO ; }   
+"try"                                { return TRY ; } 
+"typedef"                            { return TYPEDEF; }   
+"while"                              { return WHILE ; }   
+"operater"                           { return CREATE_OPERATER; }   
 
 
 
@@ -86,6 +91,7 @@ B'[01]+'                             { printf("获取了二进制数据\n"); ret
 "<<"                                 { return; }   
 ">>"                                 { return; } 
 "!="                                 { return; }     
+"."                                  { return; }   
 .                                    { printf("未处理\n");  }
 %%
 
